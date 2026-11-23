@@ -1,0 +1,58 @@
+questions:
+  - q: What is an identity?
+    options:
+      - an equation with one solution
+      - an equality that is true for every value
+      - an equality true only at 0°
+      - a graph
+    answer: 1
+    why: An identity has no exceptions. On a graph, both sides draw the same curve.
+    stars: 1
+  - q: How many counterexamples do you need to show a formula is false?
+    options:
+      - ten
+      - one for each quadrant
+      - one
+      - it can’t be shown
+    answer: 2
+    why: A single value where the two sides differ is enough.
+    stars: 1
+  - q: Which of these is an impostor?
+    options:
+      - sin 2x = 2 sin x
+      - sin 2x = 2 sin x cos x
+      - cos(−x) = cos x
+      - sin(90° − x) = cos x
+    answer: 0
+    why: "At x = 90°: sin 180° = 0, but 2 sin 90° = 2."
+    stars: 2
+  - q: sin(−x) equals…
+    options:
+      - sin x
+      - cos x
+      - −cos x
+      - −sin x
+    answer: 3
+    why: "The angle −x is x mirrored in the x axis: the point is the same distance away, but below. Sine is an odd function."
+    stars: 2
+  - q: cos²x equals…
+    options:
+      - (1 − cos 2x)/2
+      - (1 + cos 2x)/2
+      - 2 cos x
+      - 1 − cos x
+    answer: 1
+    why: From cos 2x = 2cos²x − 1 you get cos²x = (1 + cos 2x)/2. It’s a half-angle formula.
+    stars: 2
+  - q: sin x · cos B equals…
+    options:
+      - ½[sin(x + B) + sin(x − B)]
+      - sin(x + B)
+      - ½ sin(x + B)
+      - sin x + cos B
+    answer: 0
+    why: Add sin(x+B) = sin x cos B + cos x sin B and sin(x−B) = sin x cos B − cos x sin B. The cos x sin B terms cancel, leaving 2 sin x cos B.
+    stars: 3
+bonus:
+  - q: The graphs of both sides overlap for x from −360° to 360°. Is that a proof?
+    a: No, though it’s a very good hint. A graph only checks the values it draws, and tiny differences don’t show on screen. A proof shows why the equality holds for every x.

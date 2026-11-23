@@ -1,0 +1,58 @@
+questions:
+  - q: What do the angles of a triangle add up to?
+    options:
+      - 90°
+      - 180°
+      - 270°
+      - 360°
+    answer: 1
+    why: "Every triangle’s angles add up to 180°. Try it in the lab: however you drag the corners, the sum stays the same."
+    stars: 1
+  - q: The law of sines says a / sin A equals…
+    options:
+      - a · b
+      - sin B / b
+      - "1"
+      - b / sin B
+    answer: 3
+    why: a / sin A = b / sin B = c / sin C. All three equal 2R, the diameter of the circumscribed circle.
+    stars: 1
+  - q: In the law of cosines a² = b² + c² − 2bc·cos A, what happens if A = 90°?
+    options:
+      - it becomes Pythagoras’ theorem
+      - a becomes 0
+      - the formula stops working
+      - a² = 2bc
+    answer: 0
+    why: "cos 90° = 0, so the 2bc·cos A term vanishes: a² = b² + c²."
+    stars: 2
+  - q: Two sides are 6 and 10, and the angle between them is 30°. What is the area? (sin 30° = ½)
+    options:
+      - "30"
+      - "60"
+      - "15"
+      - "7.5"
+    answer: 2
+    why: Area = ½ · 6 · 10 · sin 30° = ½ · 60 · ½ = 15.
+    stars: 2
+  - q: Heron’s formula finds the area from…
+    options:
+      - two sides and an angle
+      - just the three sides
+      - just the angles
+      - the height
+    answer: 1
+    why: Area = √(s(s−a)(s−b)(s−c)), where s is the semi-perimeter. No angles needed.
+    stars: 2
+  - q: "Triangle 3-4-5: s = 6. What is the radius r of its inscribed circle? (Area = 6)"
+    options:
+      - "2"
+      - "2.5"
+      - "0.5"
+      - "1"
+    answer: 3
+    why: Area = r · s, so r = Area / s = 6 / 6 = 1.
+    stars: 3
+bonus:
+  - q: Why is the circumscribed circle of a right triangle centred exactly on the middle of the hypotenuse?
+    a: "An angle inscribed in a semicircle is a right angle. The other way round, if angle C is a right angle, the hypotenuse AB is a diameter. In formulas: c / sin 90° = c = 2R."

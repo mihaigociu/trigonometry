@@ -1,0 +1,80 @@
+---
+import { getEntry, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import LabNav from '../../../components/LabNav.astro';
+import Ratios from '../../../labs/ratios/Ratios.svelte';
+import UnitCircle from '../../../labs/unit-circle/UnitCircle.svelte';
+import Waves from '../../../labs/waves/Waves.svelte';
+import Triangles from '../../../labs/triangles/Triangles.svelte';
+import AngleSum from '../../../labs/angle-sum/AngleSum.svelte';
+import Identities from '../../../labs/identities/Identities.svelte';
+import { LOCALES, localePath, useT, type Locale } from '../../../i18n';
+import { LABS, type LabId } from '../../../shared/labs';
+
+export function getStaticPaths() {
+  return LOCALES.flatMap((lang) => LABS.map((lab) => ({ params: { lang, lab: lab.id } })));
+}
+
+const lang = Astro.params.lang as Locale;
+const lab = Astro.params.lab as LabId;
+const tr = useT(lang);
+const entry = await getEntry('learn', `${lang}/${lab}`);
+if (!entry) throw new Error(`Missing learn page: ${lang}/${lab}`);
+const { Content } = await render(entry);
+
+const i = LABS.findIndex((l) => l.id === lab);
+const next = LABS[i + 1];
+---
+
+<Base lang={lang} title={tr(`labs.${lab}.title`)} description={tr(`labs.${lab}.blurb`)} path={lab}>
+  <div class="container container--wide">
+    <LabNav lang={lang} lab={lab} current="lab" />
+    <p class="lead">{tr(`labs.${lab}.lead`)}</p>
+
+    {lab === 'ratios' && <Ratios client:load lang={lang} />}
+    {lab === 'unit-circle' && <UnitCircle client:load lang={lang} />}
+    {lab === 'waves' && <Waves client:load lang={lang} />}
+    {lab === 'triangles' && <Triangles client:load lang={lang} />}
+    {lab === 'angle-sum' && <AngleSum client:load lang={lang} />}
+    {lab === 'identities' && <Identities client:load lang={lang} />}
+
+    <section class="learn">
+      <article class="prose">
+        <Content />
+      </article>
+      <div class="next">
+        <a class="button" href={localePath(lang, `${lab}/quiz`)}>{tr('ui.quizCta')} →</a>
+        {
+          next && (
+            <a class="button button--secondary" href={localePath(lang, next.id)}>
+              {tr('ui.nextLab')}: {tr(`labs.${next.id}.title`)} →
+            </a>
+          )
+        }
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .lead {
+    margin-top: calc(-1 * var(--space-2));
+    color: var(--ink-2);
+    max-width: 60rem;
+  }
+
+  .learn {
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+    border-radius: var(--radius);
+    background: var(--surface-raised);
+    box-shadow: var(--shadow);
+  }
+
+  .next {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+  }
+</style>

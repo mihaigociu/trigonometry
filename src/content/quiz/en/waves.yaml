@@ -1,0 +1,58 @@
+questions:
+  - q: What does A do in y = A·sin x?
+    options:
+      - moves the graph right
+      - changes the period
+      - changes the height of the wave
+      - lifts the whole graph
+    answer: 2
+    why: "A is the amplitude: the wave rises to A and falls to −A."
+    stars: 1
+  - q: What is the period of y = sin 2x?
+    options:
+      - 180°
+      - 360°
+      - 720°
+      - 90°
+    answer: 0
+    why: Period = 360° / b = 360° / 2 = 180°. The wave repeats twice as often.
+    stars: 1
+  - q: What does “+ 3” do in y = sin x + 3?
+    options:
+      - moves the graph 3° left
+      - triples the height
+      - squeezes the wave
+      - lifts the graph by 3
+    answer: 3
+    why: k = 3 is added after the sine, so every point goes up by 3. The middle line becomes y = 3.
+    stars: 1
+  - q: How far is y = sin(2x + 60°) shifted from y = sin 2x?
+    options:
+      - 60° left
+      - 30° left
+      - 60° right
+      - 120° left
+    answer: 1
+    why: "The shift is φ / b = 60° / 2 = 30°, and plus means left: the wave starts where 2x + 60° = 0, that is x = −30°."
+    stars: 2
+  - q: What happens to the graph when A = −1?
+    options:
+      - it disappears
+      - it stretches
+      - it flips upside down
+      - it moves down by 1
+    answer: 2
+    why: "Every value changes sign: hills become valleys and valleys become hills."
+    stars: 2
+  - q: What is the period of y = 5·tan(⅘x + 20°) − 8, the packet’s example?
+    options:
+      - 225°
+      - 180°
+      - 144°
+      - 450°
+    answer: 0
+    why: tan’s period is 180°, and b = ⅘. 180° / ⅘ = 180° · 5/4 = 225°.
+    stars: 3
+bonus:
+  - q: Find two different formulas that draw exactly the same wave as y = cos x.
+    a: For example y = sin(x + 90°) and y = −sin(x − 90°). The game accepts both, because it compares the graphs, not the numbers.

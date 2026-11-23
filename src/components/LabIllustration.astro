@@ -1,0 +1,93 @@
+---
+// Small drawing on each home-page card.
+import type { LabId } from '../shared/labs';
+
+interface Props {
+  id: LabId;
+}
+const { id } = Astro.props;
+const sin = '#d42a45';
+const cos = '#1e64c8';
+const tan = '#0a8a4a';
+const wave = (f: (x: number) => number, x0 = 20, x1 = 300, amp = 40, mid = 80) => {
+  let d = '';
+  for (let x = x0; x <= x1; x += 4) d += `${x === x0 ? 'M' : 'L'}${x} ${(mid - amp * f(((x - x0) / (x1 - x0)) * 4 * Math.PI)).toFixed(1)}`;
+  return d;
+};
+---
+
+<svg viewBox="0 0 320 160" aria-hidden="true">
+  <rect width="320" height="160" fill="#f7f5fc" />
+  {
+    id === 'ratios' && (
+      <g stroke-linecap="round">
+        <polygon points="60,135 250,135 250,30" fill="#fff" />
+        <line x1="60" y1="135" x2="250" y2="135" stroke={cos} stroke-width="7" />
+        <line x1="250" y1="135" x2="250" y2="30" stroke={sin} stroke-width="7" />
+        <line x1="60" y1="135" x2="250" y2="30" stroke="#2b2b2b" stroke-width="6" />
+        <path d="M 100 135 A 40 40 0 0 0 95 116" fill="none" stroke="#6a3fc8" stroke-width="4" />
+        <polyline points="236,135 236,121 250,121" fill="none" stroke="#666" stroke-width="2" />
+      </g>
+    )
+  }
+  {
+    id === 'unit-circle' && (
+      <g stroke-linecap="round">
+        <circle cx="80" cy="80" r="55" fill="#fff" stroke="#999" stroke-width="2" />
+        <line x1="80" y1="80" x2="119" y2="80" stroke={cos} stroke-width="6" />
+        <line x1="119" y1="80" x2="119" y2="41" stroke={sin} stroke-width="6" />
+        <line x1="80" y1="80" x2="119" y2="41" stroke="#2b2b2b" stroke-width="3" />
+        <line x1="119" y1="41" x2="170" y2="41" stroke={sin} stroke-width="1.5" stroke-dasharray="4 4" />
+        <path d={wave(Math.sin, 150, 305, 50, 80)} fill="none" stroke={sin} stroke-width="5" />
+        <circle cx="119" cy="41" r="7" fill="#fff" stroke="#6a3fc8" stroke-width="3" />
+      </g>
+    )
+  }
+  {
+    id === 'waves' && (
+      <g fill="none" stroke-linecap="round">
+        <path d={wave(Math.sin, 20, 300, 30, 80)} stroke="#9a9993" stroke-width="3" stroke-dasharray="6 5" />
+        <path d={wave((x) => Math.sin(2 * x), 20, 300, 55, 80)} stroke={tan} stroke-width="5" />
+      </g>
+    )
+  }
+  {
+    id === 'triangles' && (
+      <g>
+        <circle cx="165" cy="88" r="62" fill="none" stroke="#c26a00" stroke-width="3" />
+        <polygon points="110,118 225,118 140,32" fill="#fff" stroke="#2b2b2b" stroke-width="5" stroke-linejoin="round" />
+        <circle cx="110" cy="118" r="8" fill="#fff" stroke={sin} stroke-width="4" />
+        <circle cx="225" cy="118" r="8" fill="#fff" stroke={cos} stroke-width="4" />
+        <circle cx="140" cy="32" r="8" fill="#fff" stroke={tan} stroke-width="4" />
+      </g>
+    )
+  }
+  {
+    id === 'angle-sum' && (
+      <g stroke-linecap="round">
+        <line x1="40" y1="140" x2="190" y2="20" stroke="#2b2b2b" stroke-width="4" />
+        <line x1="40" y1="140" x2="215" y2="70" stroke="#333" stroke-width="4" />
+        <line x1="215" y1="70" x2="190" y2="20" stroke="#333" stroke-width="4" />
+        <line x1="215" y1="70" x2="215" y2="140" stroke="#7b3fc8" stroke-width="7" />
+        <line x1="190" y1="20" x2="190" y2="70" stroke="#e07800" stroke-width="7" />
+        <line x1="270" y1="140" x2="270" y2="20" stroke={sin} stroke-width="12" />
+      </g>
+    )
+  }
+  {
+    id === 'identities' && (
+      <g fill="none">
+        <path d={wave((x) => Math.sin(x) * Math.cos(x) * 2, 20, 300, 45, 80)} stroke={sin} stroke-width="9" opacity="0.5" />
+        <path d={wave((x) => Math.sin(x) * Math.cos(x) * 2, 20, 300, 45, 80)} stroke={cos} stroke-width="3" stroke-dasharray="8 6" />
+        <text x="290" y="150" text-anchor="end" font-size="26" font-weight="700" fill="#b0237e" stroke="none">=?</text>
+      </g>
+    )
+  }
+</svg>
+
+<style>
+  svg {
+    width: 100%;
+    height: auto;
+  }
+</style>

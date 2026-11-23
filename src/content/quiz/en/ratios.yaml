@@ -1,0 +1,58 @@
+questions:
+  - q: In a right triangle, sin θ is…
+    options:
+      - adjacent / hypotenuse
+      - opposite / hypotenuse
+      - opposite / adjacent
+      - hypotenuse / opposite
+    answer: 1
+    why: "SOH: Sine = Opposite / Hypotenuse. How much the triangle “climbs”, compared with the hypotenuse."
+    stars: 1
+  - q: You double every side of a right triangle. What happens to sin θ?
+    options:
+      - it doubles
+      - it halves
+      - it stays the same
+      - it grows 4 times
+    answer: 2
+    why: Both the opposite side and the hypotenuse double, so their ratio stays the same. The ratios depend only on the angle.
+    stars: 1
+  - q: The sides are 3, 4 and 5. Angle θ has opposite side 3. What is cos θ?
+    options:
+      - 4/5
+      - 3/5
+      - 3/4
+      - 5/4
+    answer: 0
+    why: Cos = adjacent / hypotenuse = 4/5 = 0.8. The hypotenuse is always the longest side, 5.
+    stars: 1
+  - q: What is sin²θ + cos²θ, for any angle θ?
+    options:
+      - "0"
+      - it depends on θ
+      - "2"
+      - "1"
+    answer: 3
+    why: "It’s Pythagoras’ theorem divided by hypotenuse²: (opposite² + adjacent²)/hypotenuse² = 1."
+    stars: 2
+  - q: You stand 20 m from a tree and see its top at 45°. How tall is the tree? (tan 45° = 1)
+    options:
+      - 10 m
+      - 20 m
+      - 28 m
+      - 40 m
+    answer: 1
+    why: Height = distance · tan 45° = 20 · 1 = 20 m. At 45° the triangle’s two legs are equal.
+    stars: 2
+  - q: What happens to tan θ as θ gets close to 90°?
+    options:
+      - it gets close to 0
+      - it gets close to 1
+      - it grows without limit
+      - it turns negative
+    answer: 2
+    why: The adjacent side shrinks towards 0, and opposite / (something tiny) gets huge. At exactly 90°, tan doesn’t exist.
+    stars: 3
+bonus:
+  - q: Why does the packet’s table give the same value, 0.5, for sin 30° and cos 60°?
+    a: "In a right triangle the two sharp angles add up to 90°. The side opposite the 30° angle is the side adjacent to the 60° angle. So sin θ = cos(90° − θ): “co-sine” means the sine of the complement."

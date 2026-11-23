@@ -1,0 +1,58 @@
+questions:
+  - q: Is sin(30° + 60°) = sin 30° + sin 60°?
+    options:
+      - yes, always
+      - yes, but only for small angles
+      - "no: 1 ≠ 1.366"
+      - it can’t be worked out
+    answer: 2
+    why: sin 90° = 1, but sin 30° + sin 60° ≈ 0.5 + 0.866 = 1.366. Sine doesn’t split over addition.
+    stars: 1
+  - q: sin(A + B) = ?
+    options:
+      - sin A cos B + cos A sin B
+      - sin A sin B + cos A cos B
+      - sin A + sin B
+      - sin A cos B − cos A sin B
+    answer: 0
+    why: "This is the formula proved in the lab: Q’s height plus the climb from Q up to P."
+    stars: 1
+  - q: cos(A + B) = ?
+    options:
+      - cos A cos B + sin A sin B
+      - cos A cos B − sin A sin B
+      - cos A + cos B
+      - sin A cos B − cos A sin B
+    answer: 1
+    why: "For cos the sign flips: P’s distance is Q’s distance minus the green piece, sin A sin B."
+    stars: 2
+  - q: What do you get by putting B = A in the formula for sin(A + B)?
+    options:
+      - sin 2A = 2 sin A
+      - sin 2A = sin²A
+      - sin 2A = 1
+      - sin 2A = 2 sin A cos A
+    answer: 3
+    why: sin(A + A) = sin A cos A + cos A sin A = 2 sin A cos A. That’s the double-angle formula.
+    stars: 2
+  - q: In step 2, why is OQ = cos B?
+    options:
+      - because OQ is horizontal
+      - because angle A is small
+      - triangle OQP has hypotenuse 1 and angle B at O
+      - it’s just a convention
+    answer: 2
+    why: In right triangle OQP, OQ is the side adjacent to angle B, and the hypotenuse OP = 1. So OQ = 1 · cos B.
+    stars: 3
+  - q: What is cos 75°, written as cos(45° + 30°)? (√2/2 ≈ 0.707; √3/2 ≈ 0.866)
+    options:
+      - "0.966"
+      - "0.259"
+      - "1.573"
+      - "0.5"
+    answer: 1
+    why: cos 45° cos 30° − sin 45° sin 30° ≈ 0.707 · 0.866 − 0.707 · 0.5 ≈ 0.612 − 0.354 = 0.259. The packet’s table gives .2588.
+    stars: 3
+bonus:
+  - q: Starting from cos 2A = cos²A − sin²A and sin²A + cos²A = 1, show that sin²A = (1 − cos 2A)/2.
+    a: "Replace cos²A with 1 − sin²A: cos 2A = 1 − sin²A − sin²A = 1 − 2 sin²A. Rearrange: 2 sin²A = 1 − cos 2A, so sin²A = (1 − cos 2A)/2. That’s how the packet does it."

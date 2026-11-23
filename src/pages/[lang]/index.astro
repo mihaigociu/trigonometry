@@ -1,0 +1,111 @@
+---
+import Base from '../../layouts/Base.astro';
+import LabCard from '../../components/LabCard.astro';
+import HeroSpin from '../../ui/HeroSpin.svelte';
+import { localePath, localeStaticPaths, useT, type Locale } from '../../i18n';
+import { LABS } from '../../shared/labs';
+
+export const getStaticPaths = localeStaticPaths;
+
+const lang = Astro.params.lang as Locale;
+const tr = useT(lang);
+---
+
+<Base lang={lang}>
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <h1>{tr('home.heroTitle')}</h1>
+        <p>{tr('home.heroText')}</p>
+        <p><a class="button" href={localePath(lang, LABS[0]!.id)}>{tr('home.start')} →</a></p>
+      </div>
+      <div class="hero__art">
+        <HeroSpin client:visible label={tr('home.heroArtLabel')} />
+      </div>
+    </div>
+  </section>
+
+  <section class="container" aria-labelledby="choose">
+    <h2 id="choose">{tr('home.chooseTitle')}</h2>
+    <p class="sub">{tr('home.chooseText')}</p>
+    <ol class="grid">
+      {
+        LABS.map((lab, i) => (
+          <li>
+            <LabCard lang={lang} lab={lab} n={i + 1} />
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="container colours" aria-labelledby="colours">
+    <h2 id="colours">{tr('home.coloursTitle')}</h2>
+    <p>
+      <span class="c-sin">sin</span> — {tr('home.colourSin')} · <span class="c-cos">cos</span> — {tr('home.colourCos')} ·
+      <span class="c-tan">tan</span> — {tr('home.colourTan')}
+    </p>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding-block: var(--space-8);
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  @media (min-width: 48rem) {
+    .hero__inner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  h1 {
+    font-size: var(--text-hero);
+  }
+
+  .hero__text p {
+    font-size: var(--text-lg);
+    color: var(--ink-2);
+    max-width: 36ch;
+  }
+
+  .hero__art {
+    height: clamp(200px, 36vw, 300px);
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+  }
+
+  .sub {
+    color: var(--ink-2);
+  }
+
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+    gap: var(--space-6);
+  }
+
+  .grid li {
+    display: flex;
+  }
+
+  .grid li > :global(*) {
+    flex: 1;
+  }
+
+  .colours {
+    margin-top: var(--space-12);
+  }
+</style>

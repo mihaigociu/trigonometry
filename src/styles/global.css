@@ -1,0 +1,220 @@
+@import './tokens.css';
+@import './lab.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font);
+  font-size: 100%;
+  line-height: var(--leading);
+  color: var(--ink);
+  background: var(--surface);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text-base);
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 var(--space-3);
+}
+
+p {
+  margin: 0 0 var(--space-4);
+}
+
+a {
+  color: var(--brand);
+  text-underline-offset: 0.18em;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.container {
+  width: min(100% - 2 * var(--space-4), var(--content-width));
+  margin-inline: auto;
+}
+
+.container--wide {
+  width: min(100% - 2 * var(--space-4), 96rem);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -100px;
+  padding: var(--space-2) var(--space-4);
+  background: var(--ink);
+  color: var(--surface);
+  border-radius: var(--radius-sm);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--touch);
+  padding: var(--space-2) var(--space-6);
+  border: 0;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--brand-ink);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  filter: brightness(1.08);
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--brand);
+  box-shadow: inset 0 0 0 2px currentColor;
+}
+
+.button--small {
+  min-height: 38px;
+  padding: var(--space-1) var(--space-4);
+  font-size: var(--text-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Long-form text (the Learn section under each lab, from Markdown) */
+.prose {
+  max-width: 46rem;
+}
+
+.prose h2 {
+  font-size: var(--text-xl);
+  margin-top: var(--space-8);
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose h3 {
+  font-size: var(--text-lg);
+  margin-top: var(--space-6);
+}
+
+.prose blockquote {
+  margin: var(--space-6) 0;
+  padding: var(--space-3) var(--space-6);
+  border-left: 5px solid var(--brand);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--brand-soft);
+  font-size: var(--text-lg);
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+.prose table {
+  width: 100%;
+  margin: var(--space-6) 0;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+}
+
+.prose th,
+.prose td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose code {
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: #efeee9;
+  font-size: 0.95em;
+  font-family: var(--font);
+  font-weight: 700;
+}
+
+.prose ol,
+.prose ul {
+  padding-left: 1.4em;
+}
+
+.prose li {
+  margin-bottom: var(--space-2);
+}
+
+/* Coloured words in explanations: <span class="c-sin">sin</span> */
+.c-sin {
+  color: var(--sin);
+  font-weight: 700;
+}
+
+.c-cos {
+  color: var(--cos);
+  font-weight: 700;
+}
+
+.c-tan {
+  color: var(--tan);
+  font-weight: 700;
+}

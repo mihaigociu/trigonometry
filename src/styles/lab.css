@@ -1,0 +1,228 @@
+/* Shared layout and pieces for the labs. A lab is a big interactive scene
+   plus a panel of controls and live readouts. */
+.lab {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'scene'
+    'panel';
+}
+
+@media (min-width: 60rem) {
+  .lab {
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 24rem);
+    grid-template-areas: 'scene panel';
+    align-items: start;
+  }
+}
+
+.lab__scene {
+  grid-area: scene;
+  position: relative;
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.lab__scene > svg {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Phones: graphs stay in view while you move the sliders under them */
+@media (max-width: 59.99rem) {
+  .lab--sticky .lab__scene {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+.lab__panel {
+  grid-area: panel;
+  min-width: 0;
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+}
+
+.lab .card {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+}
+
+.lab .card h3 {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-2);
+}
+
+.lab .card p {
+  margin: 0 0 var(--space-1);
+}
+
+.lab .card p:last-child {
+  margin-bottom: 0;
+}
+
+.lab .muted {
+  color: var(--ink-2);
+  font-size: var(--text-sm);
+}
+
+.lab .big {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.lab .num {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.lab .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+/* Hint/feedback boxes */
+.lab .note {
+  padding: var(--space-2) var(--space-3);
+  border-left: 5px solid var(--brand);
+  border-radius: var(--radius-sm);
+  background: var(--brand-soft);
+  font-size: var(--text-sm);
+}
+
+.lab .note--ok {
+  border-left-color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.lab .note--warn {
+  border-left-color: var(--warn);
+  background: var(--warn-soft);
+}
+
+/* Banner over the scene for successes */
+.lab .banner {
+  position: absolute;
+  top: var(--space-3);
+  left: 50%;
+  translate: -50% 0;
+  padding: var(--space-2) var(--space-6);
+  border: 3px solid var(--ok);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--ok);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  white-space: nowrap;
+  animation: pop 0.35s ease-out;
+  pointer-events: none;
+}
+
+@keyframes pop {
+  from {
+    scale: 0.6;
+    opacity: 0;
+  }
+}
+
+/* Scene text in SVG */
+.lab svg text {
+  font-family: var(--font);
+  font-variant-numeric: tabular-nums;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+.lab svg .handle {
+  cursor: grab;
+}
+
+.lab svg .handle:active {
+  cursor: grabbing;
+}
+
+.lab svg .handle:focus-visible {
+  outline: none;
+}
+
+.lab svg .handle:focus-visible circle:first-child {
+  stroke: var(--focus);
+  stroke-width: 5;
+}
+
+/* Equation lines in the panel: big, readable, coloured parts */
+.lab .eq {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.lab .eq small {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.lab .sin {
+  color: var(--sin);
+}
+
+.lab .cos {
+  color: var(--cos);
+}
+
+.lab .tan {
+  color: var(--tan);
+}
+
+.lab .target {
+  color: var(--target);
+}
+
+.lab .score {
+  font-weight: 700;
+  color: var(--ok);
+}
+
+.lab input[type='number'] {
+  width: 7rem;
+  min-height: var(--touch);
+  padding: var(--space-1) var(--space-3);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: var(--text-lg);
+}
+
+.lab input[type='number']:focus {
+  border-color: var(--brand);
+  outline: none;
+}
+
+.lab select {
+  width: 100%;
+  min-height: var(--touch);
+  padding: var(--space-1) var(--space-3);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  font: inherit;
+}

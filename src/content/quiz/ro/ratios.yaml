@@ -1,0 +1,58 @@
+questions:
+  - q: Într-un triunghi dreptunghic, sin θ este…
+    options:
+      - alăturată / ipotenuză
+      - opusă / ipotenuză
+      - opusă / alăturată
+      - ipotenuză / opusă
+    answer: 1
+    why: "SOH: Sinus = Opusă / Ipotenuză. Cât de mult „urcă” triunghiul, raportat la ipotenuză."
+    stars: 1
+  - q: Dublezi toate laturile unui triunghi dreptunghic. Ce se întâmplă cu sin θ?
+    options:
+      - se dublează
+      - se înjumătățește
+      - rămâne la fel
+      - crește de 4 ori
+    answer: 2
+    why: Și opusa, și ipotenuza se dublează, deci raportul lor rămâne același. Rapoartele depind numai de unghi.
+    stars: 1
+  - q: Laturile sunt 3, 4 și 5. Unghiul θ are cateta opusă 3. Cât este cos θ?
+    options:
+      - 4/5
+      - 3/5
+      - 3/4
+      - 5/4
+    answer: 0
+    why: Cos = alăturată / ipotenuză = 4/5 = 0,8. Ipotenuza este mereu latura cea mai lungă, 5.
+    stars: 1
+  - q: Cât face sin²θ + cos²θ, pentru orice unghi θ?
+    options:
+      - "0"
+      - depinde de θ
+      - "2"
+      - "1"
+    answer: 3
+    why: "Este teorema lui Pitagora împărțită la ipotenuză²: (opusă² + alăturată²)/ipotenuză² = 1."
+    stars: 2
+  - q: Stai la 20 m de un copac și vezi vârful sub 45°. Cât de înalt e copacul? (tan 45° = 1)
+    options:
+      - 10 m
+      - 20 m
+      - 28 m
+      - 40 m
+    answer: 1
+    why: Înălțimea = distanța · tan 45° = 20 · 1 = 20 m. La 45° triunghiul are catetele egale.
+    stars: 2
+  - q: Ce se întâmplă cu tan θ când θ se apropie de 90°?
+    options:
+      - se apropie de 0
+      - se apropie de 1
+      - crește fără limită
+      - devine negativ
+    answer: 2
+    why: Cateta alăturată se micșorează spre 0, iar opusă / (ceva foarte mic) devine uriaș. La exact 90° tan nu există.
+    stars: 3
+bonus:
+  - q: De ce în tabelul din pachet sin 30° și cos 60° au aceeași valoare, 0,5?
+    a: "În triunghiul dreptunghic, cele două unghiuri ascuțite adună 90°. Cateta opusă unghiului de 30° este cateta alăturată unghiului de 60°. Deci sin θ = cos(90° − θ): „co-sinus” înseamnă sinusul complementului."

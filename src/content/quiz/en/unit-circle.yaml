@@ -1,0 +1,60 @@
+questions:
+  - q: On the circle of radius 1, what does the point’s y coordinate show?
+    options:
+      - sin θ
+      - cos θ
+      - tan θ
+      - the angle θ
+    answer: 0
+    why: The radius is the hypotenuse and has length 1, so sin θ = y / 1 = y.
+    stars: 1
+  - q: What is cos 180°?
+    options:
+      - "0"
+      - "1"
+      - −1
+      - 1/2
+    answer: 2
+    why: At 180° the point is on the left of the circle, at (−1, 0). Cos is the x coordinate, so −1.
+    stars: 1
+  - q: In quadrant II (between 90° and 180°), which function is positive?
+    options:
+      - cos
+      - sin
+      - tan
+      - all of them
+    answer: 1
+    why: The point is up (y > 0) and to the left (x < 0). Only sin, which is y, is positive.
+    stars: 2
+  - q: What is sin 150°?
+    options:
+      - −1/2
+      - √3/2
+      - −√3/2
+      - 1/2
+    answer: 3
+    why: The reference angle is 180° − 150° = 30°, and in quadrant II sin is positive. So sin 150° = sin 30° = 1/2.
+    stars: 2
+  - q: How many radians is a 90° angle?
+    options:
+      - π/2
+      - π
+      - 2π
+      - π/4
+    answer: 0
+    why: "A full turn is 360° = 2π, so 90° is a quarter of it: 2π/4 = π/2."
+    stars: 2
+  - q: sin θ = −1/2 and cos θ > 0. What is θ?
+    options:
+      - 210°
+      - 330°
+      - 150°
+      - 30°
+    answer: 1
+    why: "Negative sin means below (quadrant III or IV), and positive cos means to the right (I or IV). So quadrant IV, with reference angle 30°: 360° − 30° = 330°."
+    stars: 3
+bonus:
+  - q: Why does the graph of sin repeat every 360°?
+    a: Because after a full turn the point lands in exactly the same spot on the circle, at the same height. On the circle, the angles θ and θ + 360° are the same point.
+  - q: Why does tan have period 180°, not 360°?
+    a: tan = y/x. After half a turn the point is diametrically opposite, at (−x, −y), and (−y)/(−x) = y/x. The radius has the same slope.

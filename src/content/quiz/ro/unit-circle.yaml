@@ -1,0 +1,60 @@
+questions:
+  - q: Pe cercul cu raza 1, ce arată coordonata y a punctului?
+    options:
+      - sin θ
+      - cos θ
+      - tan θ
+      - unghiul θ
+    answer: 0
+    why: Raza este ipotenuza și are lungimea 1, deci sin θ = y / 1 = y.
+    stars: 1
+  - q: Cât este cos 180°?
+    options:
+      - "0"
+      - "1"
+      - −1
+      - 1/2
+    answer: 2
+    why: La 180° punctul este în stânga cercului, la (−1, 0). Cos este coordonata x, deci −1.
+    stars: 1
+  - q: În cadranul II (între 90° și 180°), care funcție este pozitivă?
+    options:
+      - cos
+      - sin
+      - tan
+      - toate
+    answer: 1
+    why: Punctul este sus (y > 0) și în stânga (x < 0). Doar sin, adică y, este pozitiv.
+    stars: 2
+  - q: Cât este sin 150°?
+    options:
+      - −1/2
+      - √3/2
+      - −√3/2
+      - 1/2
+    answer: 3
+    why: Unghiul de referință este 180° − 150° = 30°, iar în cadranul II sin este pozitiv. Deci sin 150° = sin 30° = 1/2.
+    stars: 2
+  - q: Câți radiani are un unghi de 90°?
+    options:
+      - π/2
+      - π
+      - 2π
+      - π/4
+    answer: 0
+    why: "Un cerc întreg are 360° = 2π, deci 90° este un sfert din el: 2π/4 = π/2."
+    stars: 2
+  - q: sin θ = −1/2 și cos θ > 0. Cât este θ?
+    options:
+      - 210°
+      - 330°
+      - 150°
+      - 30°
+    answer: 1
+    why: "Sin negativ înseamnă jos (cadranul III sau IV), iar cos pozitiv înseamnă dreapta (I sau IV). Deci cadranul IV, cu unghiul de referință 30°: 360° − 30° = 330°."
+    stars: 3
+bonus:
+  - q: De ce graficul lui sin se repetă la fiecare 360°?
+    a: Pentru că după o tură întreagă punctul ajunge exact în același loc pe cerc, cu aceeași înălțime. Unghiurile θ și θ + 360° sunt, pe cerc, același punct.
+  - q: De ce tan are perioada 180°, nu 360°?
+    a: tan = y/x. După o jumătate de tură punctul ajunge diametral opus, la (−x, −y), iar (−y)/(−x) = y/x. Raza are aceeași pantă.

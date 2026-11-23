@@ -1,0 +1,58 @@
+questions:
+  - q: Ce face A în y = A·sin x?
+    options:
+      - mută graficul la dreapta
+      - schimbă perioada
+      - schimbă înălțimea valului
+      - ridică tot graficul
+    answer: 2
+    why: "A este amplitudinea: valul urcă până la A și coboară până la −A."
+    stars: 1
+  - q: Care este perioada lui y = sin 2x?
+    options:
+      - 180°
+      - 360°
+      - 720°
+      - 90°
+    answer: 0
+    why: Perioada = 360° / b = 360° / 2 = 180°. Valul se repetă de două ori mai des.
+    stars: 1
+  - q: Ce face „+ 3” în y = sin x + 3?
+    options:
+      - mută graficul 3° la stânga
+      - triplează înălțimea
+      - strânge valul
+      - ridică graficul cu 3
+    answer: 3
+    why: k = 3 se adună după sinus, deci fiecare punct urcă cu 3. Linia de mijloc devine y = 3.
+    stars: 1
+  - q: Cu cât se mută graficul y = sin(2x + 60°) față de y = sin 2x?
+    options:
+      - 60° la stânga
+      - 30° la stânga
+      - 60° la dreapta
+      - 120° la stânga
+    answer: 1
+    why: "Mutarea este φ / b = 60° / 2 = 30°, iar semnul plus înseamnă la stânga: valul începe unde 2x + 60° = 0, adică la x = −30°."
+    stars: 2
+  - q: Ce se întâmplă cu graficul când A = −1?
+    options:
+      - dispare
+      - se lungește
+      - se întoarce cu susul în jos
+      - se mută cu 1 în jos
+    answer: 2
+    why: "Fiecare valoare își schimbă semnul: munții devin văi și invers."
+    stars: 2
+  - q: Care este perioada lui y = 5·tan(⅘x + 20°) − 8, exemplul din pachet?
+    options:
+      - 225°
+      - 180°
+      - 144°
+      - 450°
+    answer: 0
+    why: Perioada lui tan este 180°, iar b = ⅘. 180° / ⅘ = 180° · 5/4 = 225°.
+    stars: 3
+bonus:
+  - q: Găsește două formule diferite care desenează exact același val ca y = cos x.
+    a: De exemplu y = sin(x + 90°) și y = −sin(x − 90°). În joc ambele sunt acceptate, pentru că se compară graficele, nu numerele.

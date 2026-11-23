@@ -1,0 +1,58 @@
+questions:
+  - q: Ce este o identitate?
+    options:
+      - o ecuație cu o singură soluție
+      - o egalitate adevărată pentru orice valoare
+      - o egalitate adevărată doar la 0°
+      - un grafic
+    answer: 1
+    why: O identitate nu are excepții. Pe grafic, cele două părți desenează aceeași curbă.
+    stars: 1
+  - q: Câte contraexemple îți trebuie ca să arăți că o formulă e falsă?
+    options:
+      - zece
+      - unul pentru fiecare cadran
+      - unul
+      - nu se poate arăta
+    answer: 2
+    why: Ajunge o singură valoare la care cele două părți diferă.
+    stars: 1
+  - q: Care dintre acestea este un impostor?
+    options:
+      - sin 2x = 2 sin x
+      - sin 2x = 2 sin x cos x
+      - cos(−x) = cos x
+      - sin(90° − x) = cos x
+    answer: 0
+    why: "La x = 90°: sin 180° = 0, dar 2 sin 90° = 2."
+    stars: 2
+  - q: sin(−x) este egal cu…
+    options:
+      - sin x
+      - cos x
+      - −cos x
+      - −sin x
+    answer: 3
+    why: "Unghiul −x este oglinda lui x față de axa x: punctul ajunge la aceeași distanță, dar dedesubt. Sinusul e funcție impară."
+    stars: 2
+  - q: cos²x este egal cu…
+    options:
+      - (1 − cos 2x)/2
+      - (1 + cos 2x)/2
+      - 2 cos x
+      - 1 − cos x
+    answer: 1
+    why: Din cos 2x = 2cos²x − 1 rezultă cos²x = (1 + cos 2x)/2. Este o formulă pentru jumătate de unghi.
+    stars: 2
+  - q: sin x · cos B este egal cu…
+    options:
+      - ½[sin(x + B) + sin(x − B)]
+      - sin(x + B)
+      - ½ sin(x + B)
+      - sin x + cos B
+    answer: 0
+    why: Aduni sin(x+B) = sin x cos B + cos x sin B și sin(x−B) = sin x cos B − cos x sin B. Termenii cu cos x sin B se anulează și rămâne 2 sin x cos B.
+    stars: 3
+bonus:
+  - q: Graficele a două părți se suprapun pentru x între −360° și 360°. E asta o demonstrație?
+    a: Nu, chiar dacă e un indiciu foarte bun. Graficul verifică doar valorile desenate, iar pe ecran diferențele foarte mici nu se văd. O demonstrație arată de ce egalitatea e adevărată pentru orice x.

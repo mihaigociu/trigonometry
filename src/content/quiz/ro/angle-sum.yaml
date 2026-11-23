@@ -1,0 +1,58 @@
+questions:
+  - q: Este adevărat că sin(30° + 60°) = sin 30° + sin 60°?
+    options:
+      - da, mereu
+      - da, doar pentru unghiuri mici
+      - "nu: 1 ≠ 1,366"
+      - nu se poate calcula
+    answer: 2
+    why: sin 90° = 1, dar sin 30° + sin 60° ≈ 0,5 + 0,866 = 1,366. Sinusul nu se desface peste adunare.
+    stars: 1
+  - q: sin(A + B) = ?
+    options:
+      - sin A cos B + cos A sin B
+      - sin A sin B + cos A cos B
+      - sin A + sin B
+      - sin A cos B − cos A sin B
+    answer: 0
+    why: "Este formula demonstrată în laborator: înălțimea lui Q plus urcarea de la Q la P."
+    stars: 1
+  - q: cos(A + B) = ?
+    options:
+      - cos A cos B + sin A sin B
+      - cos A cos B − sin A sin B
+      - cos A + cos B
+      - sin A cos B − cos A sin B
+    answer: 1
+    why: "La cos semnul se schimbă: distanța lui P este distanța lui Q minus bucata verde, sin A sin B."
+    stars: 2
+  - q: Ce obții dacă pui B = A în formula lui sin(A + B)?
+    options:
+      - sin 2A = 2 sin A
+      - sin 2A = sin²A
+      - sin 2A = 1
+      - sin 2A = 2 sin A cos A
+    answer: 3
+    why: sin(A + A) = sin A cos A + cos A sin A = 2 sin A cos A. Aceasta este formula unghiului dublu.
+    stars: 2
+  - q: În pasul 2, de ce OQ = cos B?
+    options:
+      - pentru că OQ e orizontal
+      - pentru că unghiul A e mic
+      - triunghiul OQP are ipotenuza 1 și unghiul B în O
+      - e o convenție
+    answer: 2
+    why: În triunghiul dreptunghic OQP, OQ este cateta alăturată unghiului B, iar ipotenuza OP = 1. Deci OQ = 1 · cos B.
+    stars: 3
+  - q: Cât face cos 75°, scris ca cos(45° + 30°)? (√2/2 ≈ 0,707; √3/2 ≈ 0,866)
+    options:
+      - 0,966
+      - 0,259
+      - 1,573
+      - 0,5
+    answer: 1
+    why: cos 45° cos 30° − sin 45° sin 30° ≈ 0,707 · 0,866 − 0,707 · 0,5 ≈ 0,612 − 0,354 = 0,259. Tabelul din pachet dă .2588.
+    stars: 3
+bonus:
+  - q: Pornind de la cos 2A = cos²A − sin²A și sin²A + cos²A = 1, arată că sin²A = (1 − cos 2A)/2.
+    a: "Înlocuiește cos²A = 1 − sin²A: cos 2A = 1 − sin²A − sin²A = 1 − 2 sin²A. Mută termenii: 2 sin²A = 1 − cos 2A, deci sin²A = (1 − cos 2A)/2. Așa face și pachetul."
