@@ -22,5 +22,4 @@ export const LABS: readonly LabInfo[] = [
   { id: 'identities', accent: '#b0237e', stars: 3 },
 ];
 
-export const SCHOOL_URL = 'https://scoalateofil.ro';
 export const PHYSICS_URL = 'https://mihaigociu.github.io/physics-simulations/';
